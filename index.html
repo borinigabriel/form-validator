@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Inscreva-se Hoje!</h1>
+    <form id="formulario">
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" 
+               placeholder="Nome Completo" required minlength="3" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="telefone">Número de Telefone</label>
+        <input type="tel" id="telefone" name="telefone" 
+               placeholder="(XX) XXXXX-XXXX" required pattern="\(\d{2}\)\s\d{5}-\d{4}">
+      </div>
+      <div class="form-group">
+        <label for="email">Endereço de E-mail</label>
+        <input type="email" id="email" name="email" 
+               placeholder="email@dominio.com" required>
+      </div>
+      <div class="form-group">
+        <label for="site">URL do Website</label>
+        <input type="url" id="site" name="site" 
+               placeholder="http://exemplo.com" required>
+      </div>
+      <div class="form-group">
+        <label for="senha1">Senha</label>
+        <input type="password" id="senha1" placeholder="Crie uma Senha (Mín. 8 caracteres)" 
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+               title="Inclua pelo menos 1 caractere maiúsculo, 1 caractere minúsculo e 1 número.">
+      </div>
+      <div class="form-group">
+        <label for="senha2">Confirmar Senha</label>
+        <input type="password" id="senha2" placeholder="Confirmar Senha"
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" name="senha">
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+    <div class="message-container">
+      <h3 id="mensagem">Não Hesite!</h3>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
